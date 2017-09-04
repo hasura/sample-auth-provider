@@ -1,0 +1,525 @@
+Started GET "/" for 127.0.0.1 at 2017-09-01 14:43:38 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0.1) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0.1) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  [1m[35m (81.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (94.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216103943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216103943"]]
+  [1m[35m (89.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-09-01 09:14:15 UTC], ["updated_at", 2017-09-01 09:14:15 UTC]]
+  [1m[35m (51.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-09-01 14:44:23 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 14:49:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#signup as */*
+  Parameters: {"{\"username\": \"tiru\", \"password\": \"abcdef123\"}"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 41ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 14:50:44 +0530
+Processing by UsersController#signup as */*
+  Parameters: {"username"=>"tiru", "password"=>"[FILTERED]", "user"=>{"username"=>"tiru"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "tiru"], ["password_digest", "$2a$10$dU18AXT/V65Oajk4vvHqTu9G.znVG4CmSVKSjsjJCU6u8x4zl6whq"], ["created_at", 2017-09-01 09:20:44 UTC], ["updated_at", 2017-09-01 09:20:44 UTC]]
+  [1m[35m (67.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 141ms (Views: 0.2ms | ActiveRecord: 69.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 14:51:02 +0530
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"tiru", "password"=>"[FILTERED]", "user"=>{"username"=>"tiru"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tiru"], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:13:49 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>28, "user"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:17:20 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>29, "user"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216103943)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20161216103943"]]
+  [1m[35m (56.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216103943)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "password_digest" varchar NOT NULL, "hasura_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216103943"]]
+  [1m[35m (51.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:33:17 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/tselvan/projects/custom-auth/app/controllers/users_controller.rb:24: syntax error, unexpected ')', expecting =>):
+  
+app/controllers/users_controller.rb:24: syntax error, unexpected ')', expecting =>
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:34:12 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>31, "user"=>{"hasura_id"=>31}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious"], ["password_digest", "$2a$10$A8y98j2LeMvd9hsvgf.qhOC3r.I4FgfRRKUkvP9hlRqC/hK7LyH8m"], ["hasura_id", 31], ["created_at", 2017-09-01 10:04:12 UTC], ["updated_at", 2017-09-01 10:04:12 UTC]]
+  [1m[35m (69.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 135ms (Views: 0.2ms | ActiveRecord: 69.8ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:42:46 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>32, "user"=>{"hasura_id"=>32}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious"], ["password_digest", "$2a$10$So3A/h/At4SwkkYnNZeBXudnxAc5PnozfG/vnE958BFXYeQroGxEe"], ["hasura_id", 32], ["created_at", 2017-09-01 10:12:46 UTC], ["updated_at", 2017-09-01 10:12:46 UTC]]
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 155ms (Views: 0.1ms | ActiveRecord: 85.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:52:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/tselvan/projects/custom-auth/app/controllers/users_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting '}'
+...: false, merge_data:{} new_user: true }, status: 201
+...                               ^):
+  
+app/controllers/users_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting '}'
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 15:52:44 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>34, "user"=>{"hasura_id"=>34}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious"], ["password_digest", "$2a$10$cV6IjVv1uxZZk.aTMbg2k.jVFBUtiG5GKC4m.oOOzeObepYmOv5Du"], ["hasura_id", 34], ["created_at", 2017-09-01 10:22:44 UTC], ["updated_at", 2017-09-01 10:22:44 UTC]]
+  [1m[35m (68.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 142ms (Views: 0.2ms | ActiveRecord: 69.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 16:14:06 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 16:40:17 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious"], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 16:43:23 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious"], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 16:50:22 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious"], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 17:02:13 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>35, "user"=>{"hasura_id"=>35}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious"], ["password_digest", "$2a$10$/B9FBgJIegafd5y4BF27WO3IkH2gxpcE99HySUTKXA7CzEf80E0By"], ["hasura_id", 35], ["created_at", 2017-09-01 11:32:13 UTC], ["updated_at", 2017-09-01 11:32:13 UTC]]
+  [1m[35m (87.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 150ms (Views: 0.2ms | ActiveRecord: 87.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 17:16:35 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious", "password"=>"[FILTERED]"}, "hasura_id"=>36, "user"=>{"hasura_id"=>36}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious"], ["password_digest", "$2a$10$bViiFBYy0u2W/3wXG.CTYeZy8AGsOi7uyE8XIuZOxWMlvh3JOrBYe"], ["hasura_id", 36], ["created_at", 2017-09-01 11:46:35 UTC], ["updated_at", 2017-09-01 11:46:35 UTC]]
+  [1m[35m (56.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 120ms (Views: 0.2ms | ActiveRecord: 57.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 17:16:49 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious"], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 17:18:20 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious1", "password"=>"[FILTERED]"}, "hasura_id"=>37, "user"=>{"hasura_id"=>37}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "tirulicious1"], ["password_digest", "$2a$10$nJprrwJI.ghWWcSOladaX.IShEEB5CECyfB.g4tt9OpeEmRcKpq3."], ["hasura_id", 37], ["created_at", 2017-09-01 11:48:20 UTC], ["updated_at", 2017-09-01 11:48:20 UTC]]
+  [1m[35m (49.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 113ms (Views: 0.2ms | ActiveRecord: 49.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 17:18:28 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious1", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious1"], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 17:18:39 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious1", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious1"], ["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 17:59:03 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"tirulicious1", "password"=>"[FILTERED]", "user"=>{"username"=>"tirulicious1"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "tirulicious1"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 67ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216103943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20161216103943"]]
+  [1m[35m (80.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20161216103943)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "hasura_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161216103943"]]
+  [1m[35m (54.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:33:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious1", "password"=>"[FILTERED]"}, "hasura_id"=>38, "user"=>{"hasura_id"=>38}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `end_with?' for nil:NilClass):
+  
+app/models/user.rb:8:in `email_belongs_to_hasura'
+app/controllers/users_controller.rb:25:in `signup'
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:37:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious1", "password"=>"[FILTERED]"}, "hasura_id"=>39, "user"=>{"hasura_id"=>39}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 75ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:38:20 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"username"=>"tirulicious1", "password"=>"[FILTERED]"}, "hasura_id"=>40, "user"=>{"hasura_id"=>40}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 62ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:38:38 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious1", "password"=>"[FILTERED]"}, "hasura_id"=>41, "user"=>{"hasura_id"=>41}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 64ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:38:45 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious1@adfadf.com", "password"=>"[FILTERED]"}, "hasura_id"=>42, "user"=>{"hasura_id"=>42}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 61ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:38:54 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious1@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>43, "user"=>{"hasura_id"=>43}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious1@hasura.io"], ["password_digest", "$2a$10$7GlyJaI7gMEq7xuUU7bMmejdEw7394cyYiSaFo/dqJj0dAwuAfi1O"], ["hasura_id", 43], ["created_at", 2017-09-01 13:08:54 UTC], ["updated_at", 2017-09-01 13:08:54 UTC]]
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 156ms (Views: 0.2ms | ActiveRecord: 82.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:43:35 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious1@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>44, "user"=>{"hasura_id"=>44}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious1@hasura.io"], ["password_digest", "$2a$10$yKOpfZKb4l1uJNu65fVHWusT4McR3HRp571qIngdN4SGaT.BQtqz6"], ["hasura_id", 44], ["created_at", 2017-09-01 13:13:35 UTC], ["updated_at", 2017-09-01 13:13:35 UTC]]
+  [1m[35m (172.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 257ms (Views: 0.2ms | ActiveRecord: 173.0ms)
+
+
+Started POST "/merge" for 127.0.0.1 at 2017-09-01 18:43:36 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/merge"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:44:39 +0530
+  
+ArgumentError (Unknown validator: 'UniqueValidator'):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 18:45:04 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious1@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>46, "user"=>{"hasura_id"=>46}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious1@hasura.io"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 102ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:27:14 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious2@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>47, "user"=>{"hasura_id"=>47}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious2@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious2@hasura.io"], ["password_digest", "$2a$10$oz5.CcEEMcFGa.5q2Fw12OrUHIxrWRsmQaREIS2gtjwtlmhyn9EvS"], ["hasura_id", 47], ["created_at", 2017-09-01 13:57:14 UTC], ["updated_at", 2017-09-01 13:57:14 UTC]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 167ms (Views: 0.2ms | ActiveRecord: 100.6ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:40:04 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious3@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>52, "user"=>{"hasura_id"=>52}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious3@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious3@hasura.io"], ["password_digest", "$2a$10$NFPYfwa8wCHceQ.O8aTveOnhwtr2RuIr1UfbSJ5pcfCPWc2Ybr4uK"], ["hasura_id", 52], ["created_at", 2017-09-01 14:10:05 UTC], ["updated_at", 2017-09-01 14:10:05 UTC]]
+  [1m[35m (64.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 148ms (Views: 0.2ms | ActiveRecord: 65.9ms)
+
+
+Started POST "/merge" for 127.0.0.1 at 2017-09-01 19:40:05 +0530
+Processing by UsersController#merge as HTML
+  Parameters: {"new_hasura_id"=>51, "old_hasura_id"=>52, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 52], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "tirulicious3@hasura.io"], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 52], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 51], ["LIMIT", 1]]
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:47:33 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious3@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>53, "user"=>{"hasura_id"=>53}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious3@hasura.io"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 66ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:48:24 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious4@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>55, "user"=>{"hasura_id"=>55}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious4@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious4@hasura.io"], ["password_digest", "$2a$10$pSUUdUN6AMX3rpHmkhEWjOUcbFsyJlADPkxHAHx3qAuZ4PfUAo4G2"], ["hasura_id", 55], ["created_at", 2017-09-01 14:18:24 UTC], ["updated_at", 2017-09-01 14:18:24 UTC]]
+  [1m[35m (78.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 158ms (Views: 0.3ms | ActiveRecord: 79.2ms)
+
+
+Started POST "/merge" for 127.0.0.1 at 2017-09-01 19:48:24 +0530
+Processing by UsersController#merge as HTML
+  Parameters: {"new_hasura_id"=>54, "old_hasura_id"=>55, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 55], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "tirulicious4@hasura.io"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Completed 400 Bad Request in 82843ms (Views: 1.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:51:03 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious5@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>56, "user"=>{"hasura_id"=>56}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious5@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious5@hasura.io"], ["password_digest", "$2a$10$vXoIURhJ2YA46kC3ml0DjOHMJdYKLT9i07NHrHwU6VrFazzqQrE/a"], ["hasura_id", 56], ["created_at", 2017-09-01 14:21:04 UTC], ["updated_at", 2017-09-01 14:21:04 UTC]]
+  [1m[35m (96.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 173ms (Views: 0.2ms | ActiveRecord: 97.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 19:51:43 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious6@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>58, "user"=>{"hasura_id"=>58}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious6@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious6@hasura.io"], ["password_digest", "$2a$10$m/RZr38LOyGcrEEHwWfs2.phh1WZQHQWHqATGRLOAL7ii1yJDHiji"], ["hasura_id", 58], ["created_at", 2017-09-01 14:21:43 UTC], ["updated_at", 2017-09-01 14:21:43 UTC]]
+  [1m[35m (44.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 110ms (Views: 0.3ms | ActiveRecord: 46.0ms)
+
+
+Started POST "/merge" for 127.0.0.1 at 2017-09-01 19:51:43 +0530
+Processing by UsersController#merge as HTML
+  Parameters: {"new_hasura_id"=>57, "old_hasura_id"=>58, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 58], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND ("users"."id" != ?) LIMIT ?[0m  [["email", "tirulicious6@hasura.io"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 20:00:10 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious7@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>60, "user"=>{"hasura_id"=>60}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious7@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious7@hasura.io"], ["password_digest", "$2a$10$3P8snugPJOB2IERken7uh.v/VslS6hUu/52Guva2hEzTkbX1IYevK"], ["hasura_id", 60], ["created_at", 2017-09-01 14:30:10 UTC], ["updated_at", 2017-09-01 14:30:10 UTC]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 147ms (Views: 0.2ms | ActiveRecord: 81.3ms)
+
+
+Started POST "/merge" for 127.0.0.1 at 2017-09-01 20:00:10 +0530
+Processing by UsersController#merge as HTML
+  Parameters: {"new_hasura_id"=>59, "old_hasura_id"=>60, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 60], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "hasura_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["hasura_id", 59], ["updated_at", 2017-09-01 14:30:10 UTC], ["id", 8]]
+  [1m[35m (63.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 64.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 20:01:04 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"tirulicious7@hasura.io", "password"=>"[FILTERED]", "user"=>{"email"=>"tirulicious7@hasura.io"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious7@hasura.io"], ["LIMIT", 1]]
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 20:05:17 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"tirulicious7@hasura.io", "password"=>"[FILTERED]", "user"=>{"email"=>"tirulicious7@hasura.io"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious7@hasura.io"], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-09-01 20:05:28 +0530
+Processing by UsersController#login as HTML
+  Parameters: {"email"=>"tirulicious8@hasura.io", "password"=>"[FILTERED]", "user"=>{"email"=>"tirulicious8@hasura.io"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious8@hasura.io"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 20:05:37 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious8@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>61, "user"=>{"hasura_id"=>61}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious8@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious8@hasura.io"], ["password_digest", "$2a$10$hgNSIE1CHAHajZjjchMAGOPVkolp6xz/tbwzMvP.qeqNcS6U14mMa"], ["hasura_id", 61], ["created_at", 2017-09-01 14:35:37 UTC], ["updated_at", 2017-09-01 14:35:37 UTC]]
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 150ms (Views: 0.2ms | ActiveRecord: 83.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2017-09-01 20:10:16 +0530
+Processing by UsersController#signup as HTML
+  Parameters: {"data"=>{"email"=>"tirulicious9@hasura.io", "password"=>"[FILTERED]"}, "hasura_id"=>64, "user"=>{"hasura_id"=>64}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tirulicious9@hasura.io"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "hasura_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["email", "tirulicious9@hasura.io"], ["password_digest", "$2a$10$VnlARtjFKReV/eULydFcGu6Bni0/efvPdGJiDKC4SbzZ822pK2632"], ["hasura_id", 64], ["created_at", 2017-09-01 14:40:16 UTC], ["updated_at", 2017-09-01 14:40:16 UTC]]
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 161ms (Views: 0.2ms | ActiveRecord: 85.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 63], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 632], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 62], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 61], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 60], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 59], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."hasura_id" = ? LIMIT ?[0m  [["hasura_id", 58], ["LIMIT", 1]]
