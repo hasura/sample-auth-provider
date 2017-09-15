@@ -17,4 +17,4 @@ USER nobody
 
 ENV RAILS_ENV production
 WORKDIR $APP_HOME
-CMD ["bundle", "exec", "rails", "s", "-p", "8080"]
+CMD ["sh", "-c", "bundle exec rake db:migrate && bundle exec rails s -p 8080"]
